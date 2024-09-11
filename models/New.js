@@ -33,6 +33,9 @@ const LecturerSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    gender:{
+        type: String
+    },
     retirement_date:{
         type: Date,
         required: true
