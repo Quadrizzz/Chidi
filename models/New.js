@@ -31,14 +31,16 @@ const LecturerSchema = new mongoose.Schema({
     },
     retirement_age:{
         type: Number,
-        required: true
+        required: false,
+        default: 65
     },
     gender:{
-        type: String
+        type: String,
+        required: true
     },
     retirement_date:{
         type: Date,
-        required: true
+        required: false
     },
     marital_status:{
         type: String,
@@ -54,19 +56,21 @@ const LecturerSchema = new mongoose.Schema({
     },
     lga:{
         type: String,
-        required: true
+        required: false
     },
     geo_politcal_zone:{
         type: String,
-        required: true
+        required: false
     },
     date_of_first_appointment:{
         type: Date,
-        required: true
+        required: false,
+        default: Date.now
     },
     data_of_present_appointment:{
         type: Date,
-        required: true
+        required: false,
+        default: Date.now
     },
     salary_structure:{
         type: String,
@@ -74,11 +78,11 @@ const LecturerSchema = new mongoose.Schema({
     },
     gl:{
         type: Number,
-        required: true
+        required: false
     },
     step:{
         type: Number,
-        required: true
+        required: false
     },
     confirmation_date:{
         type: Date,
@@ -90,7 +94,7 @@ const LecturerSchema = new mongoose.Schema({
     },
     post_designation:{
         type: String,
-        required: true
+        required: false
     },
     faculty:{
         type: String,
@@ -106,7 +110,7 @@ const LecturerSchema = new mongoose.Schema({
     },
     transfer_date:{
         type: Date,
-        required: true
+        required: false
     },
     qualification:{
         type: String,
@@ -114,7 +118,7 @@ const LecturerSchema = new mongoose.Schema({
     },
     phd:{
         type: Boolean,
-        required: true
+        required: false
     },
     phone:{
         type: String,
@@ -126,27 +130,28 @@ const LecturerSchema = new mongoose.Schema({
     },
     status:{
         type: Boolean,
-        required: true
+        required: true,
+        default: true
     },
     reason_for_inactive:{
         type: String,
-        required: true
+        required: false
     },
     date_of_inactive:{
         type: Date,
-        required: true
+        required: false
     },
     pfa:{
         type: String,
-        required: true
+        required: false
     },
     pen_number:{
         type: String,
-        requred: true
+        requred: false
     },
     category:{
         type: String,
-        requried: true
+        requried: false
     },
     campus:{
         type: String,
@@ -154,21 +159,25 @@ const LecturerSchema = new mongoose.Schema({
     },
     leave_status:{
         type: Boolean,
-        required: true
+        required: false,
+        default: false
     },
     start_date:{
         type: Date,
-        required: true
+        required: false,
+        default: Date.now
     },
     end_date:{
         type: Date,
-        required: true
+        required: false
     },
     remarks:{
-        type: Array
+        type: Array,
+        required: false,
+        default: ["all good"],
     },
     resume:{
-        type: Date,
+        type: String,
         required: true
     }
 })
